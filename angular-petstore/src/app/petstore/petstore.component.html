@@ -1,0 +1,37 @@
+<!-- References:
+https://openclipart.org/detail/313039/german-shepherd-sketch
+https://openclipart.org/detail/26795/siamese-cat
+https://openclipart.org/detail/256956/kitten-line-art
+https://openclipart.org/detail/193464/gat-1
+https://openclipart.org/detail/124147/wolf-3
+https://openclipart.org/detail/124141/wolf-2
+https://openclipart.org/detail/124129/wolf-1
+ -->
+
+<div class="header_div">
+  <h1 class="title">Pet Store</h1>
+</div>
+
+<div *ngFor="let pet of pets" class="container">
+  <mat-card class="card">
+    <mat-card-header class="container">
+      <mat-card-title><h1>{{pet.status}}</h1></mat-card-title>
+<!--      <mat-card-subtitle><h1>{{pet.category.name}}, {{pet.name}}</h1></mat-card-subtitle>-->
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        My name is {{pet.name}}.
+<!--        I am a {{pet.category.name}}.-->
+        My status is {{pet.status}}.
+      </p>
+    </mat-card-content>
+    <mat-card-actions *ngIf="pet.id">
+      <mat-chip-list>
+        <mat-chip *ngFor="let tag of pet.tags" selectable="true">
+          {{tag.name}}
+        </mat-chip>
+      </mat-chip-list>
+    </mat-card-actions>
+    <img *ngFor="let src of pet.photoUrls" mat-card-image [src]="src" alt="Photo of pet." >
+  </mat-card>
+</div>

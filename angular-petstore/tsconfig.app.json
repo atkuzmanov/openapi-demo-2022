@@ -1,0 +1,26 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./out-tsc/app",
+    "types": [ "node" ],
+    "typeRoots": [ "../node_modules/@types" ]
+  },
+  "files": [
+    "src/main.ts",
+    "src/polyfills.ts"
+  ],
+  "include": [
+    // Temporary commenting out some lines below to get rid of this warning:
+    // Warning: /Users/kuzmanov/Documents/atkuzmanov-personal-stuff/atkuzmanov-github-repos/opeanapi3-presi1-wrkspc/demos/demo-6/angular-petstore/src/app/app.component.spec.ts is part of the TypeScript compilation but it's unused.
+    // Add only entry points to the 'files' or 'include' properties in your tsconfig.
+    "src/**/*.d.ts",
+    "**/*.d.ts",
+    "typings.d.ts"
+    // "src/**/*.ts",
+    // "**/*.spec.ts",
+    // "**/*.ts"
+  ],
+  "exclude": [
+  ]
+}
